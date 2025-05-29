@@ -108,6 +108,7 @@ resource "azurerm_linux_function_app" "function_app" {
     AzureSentinelWorkspaceId = var.azure_sentinel_workspace_id
     LogType                  = var.log_type
     PrismaCloudAPIUrl        = var.prisma_cloud_api_url
+    PrismaCloudComputeAPIUrl = var.prisma_cloud_compute_api_url
     PrismaCloudAccessKeyID   = var.prisma_cloud_access_key_id
     PrismaCloudSecretKey     = var.prisma_cloud_access_secret_key
     logAnalyticsUri          = "https://${var.azure_sentinel_workspace_id}.ods.opinsights.azure.com"
@@ -169,4 +170,3 @@ resource "azurerm_monitor_smart_detector_alert_rule" "smart_detector_alert_rule"
     ids = [azurerm_monitor_action_group.action_group.id]
   }
 }
-
